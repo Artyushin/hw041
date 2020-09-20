@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">hw041</string>
+    <string name="input_money">Ввод денег</string>
+    <string name="input_info">Информация об оплате</string>
+    <string name="btn_ok">OK</string>
+    <string name="bank_card">С банковской карты</string>
+    <string name="mobile_phone">С мобильного телефона</string>
+    <string name="cash_address">Наличными по адресу</string>
+    <string name="info_toast">Платеж передан в обработку</string>
+</resources>
