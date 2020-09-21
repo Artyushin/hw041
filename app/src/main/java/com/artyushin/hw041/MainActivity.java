@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox mBankCardChkBx;
     private CheckBox mMobilePhoneChkBx;
     private CheckBox mCashAddressChkBx;
+    private String payInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +47,19 @@ public class MainActivity extends AppCompatActivity {
                             resetCheckBoxes();
                             mBankCardChkBx.setChecked(true);
                             mInputInfo.setInputType(InputType.TYPE_CLASS_NUMBER);
+                            payInfo = getString(R.string.bank_card);
                             break;
                         case R.id.mobilePhoneChkBx:
                             resetCheckBoxes();
                             mMobilePhoneChkBx.setChecked(true);
                             mInputInfo.setInputType(InputType.TYPE_CLASS_PHONE);
+                            payInfo = getString(R.string.mobile_phone);
                             break;
                         case R.id.cashAddressChkBx:
                             resetCheckBoxes();
                             mInputInfo.setInputType(InputType.TYPE_CLASS_TEXT);
                             mCashAddressChkBx.setChecked(true);
+                            payInfo = getString(R.string.cash_address);
                             break;
                         default:
                     }
@@ -70,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, R.string.info_toast, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, getString(R.string.info_toast) + " "
+                        + payInfo + ". Сумма: " + mInputMoney.getText(), Toast.LENGTH_LONG).show();
             }
         });
 
